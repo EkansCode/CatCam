@@ -1,6 +1,6 @@
 # CatCam
 
-CatCam is a Python script that detects motion using a PIR motion sensor and captures images using a camera. It sends email notifications with the captured images when motion is detected.
+CatCam is a python catflap security camera for raspberry pi, it detects motion using a PIR motion sensor and captures images using a camera. It sends email notifications with the captured images when motion is detected.
 
 ## Prerequisites
 
