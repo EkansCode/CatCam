@@ -44,6 +44,9 @@ Picamera
 Connect pi camera to 
 Make Circuit as shown in photo
 
+![image](https://github.com/EkansCode/CatCam/assets/143468031/b94dcf57-28e7-402c-802b-e4d3bb808f7d)
+
+
 
 (PIR inputs are unclear in photo, black to -, yellow to output, red to +) 
 
