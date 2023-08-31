@@ -1,6 +1,23 @@
-# CatCam
+CatCam is a Python script that utilizes a Raspberry Pi along with a pir to create a motion-activated camera system. This version, v0.1.0, introduces the initial set of features for capturing images and videos when motion is detected and sending notifications via email.
 
-CatCam is a python catflap security camera for raspberry pi, it detects motion using a PIR motion sensor and captures images using a camera. It sends email notifications with the captured images when motion is detected.
+Features:
+
+    Image and Video Capture:
+    Users can choose to capture either images or videos when motion is detected. The captured content is saved to a designated output folder.
+
+    Email Notifications:
+    CatCam can send email notifications when motion is detected, along with the captured media as attachments. Users can enable or disable email notifications during setup. Gmail's SMTP server is used for sending emails.
+
+    Folder Organization:
+    Captured media is stored in folders organized by date and numbered subfolders for each session. This helps in keeping track of different instances of motion detection. That can be merged or purged with respective .py files (check bottom of description).
+
+    Saved email credentials:
+    Using pickle to store and retrieve login-related data in a serialized format. This helps to maintain email-related settings across different runs of the script without the need for manual input each time, streamlining the process.  
+
+    .Mpeg-4 to .mp4:
+    Using ffmpeg to enhance video compatibility and accessibility by converting the video files to a format that is widely supported across various platforms and players. This enables users to easily view and share the captured videos without encountering compatibility issues.
+
+
 
 ## Prerequisites
 
@@ -9,6 +26,7 @@ CatCam is a python catflap security camera for raspberry pi, it detects motion u
 - Camera module
 - Gmail account with 2-Step Verification enabled
 - Python 3.x
+- ffmpeg 
 
 #enable 2-Step Verification - Get app password/email password
 
@@ -26,11 +44,14 @@ g. Google will generate a unique 16-character app password for you. This is what
 
 ## Installation
 
-1. Clone this repository to your Raspberry Pi or download the script, make sure you keep CatCam.py and catcamoutput folder in the CatCam folder.
+1. Clone this repository to your Raspberry Pi or download the script, make sure you keep CatCam.py, merger.py, purger.py and catcamoutput folder in the CatCam folder.
 2. Install the required Python packages using the following command:
    
 pip install picamera2 
 pip install gpiozero
+
+3. Install ffmpeg and put it in your CatCam folder. Depending on your pi's processor you will need the 32 (armhf) or 64 (arm64) bit ffmpeg both can be downloaded from https://johnvansickle.com/ffmpeg/ if you are confused which bit your processor is use cat /proc/cpuinfo in terminal. If link is invaild search for FFmpeg Static Builds for linux.
+   
 
 #Hardware
 
@@ -50,20 +71,23 @@ Make Circuit as shown in photo
 
 (PIR inputs are unclear in photo, black to -, yellow to output, red to +) 
 
-## Configuration
-
-#Fast Login - Set email adresses without ui
-- Locate line 55
-- Modify the `sender_email`, `sender_password`, and `to_email` variables in the script to set up email notifications.
-
 
 ## Usage
 
-Run CatCam.py using terminal or prefered method, input emails and passwords.
-CatCam will now be active and will email you when motion is detected 🥳
-Ctrl c to exit
+    Ensure you have the required Python libraries and dependencies installed.
+    Ensure ffmpeg is downloaded for the right cpu architecture and that it is in CatCam folder.
+    Set up the PIR motion sensor and LED on the appropriate GPIO pins.
+    Run the script using python catcam.py in the terminal.
+    Follow the prompts to configure email settings and output preferences.
+    The script will continuously monitor for motion and capture media as configured.
 
-Make sure you keep CatCam.py and catcamoutput folder in the CatCam folder.
+Merger.py:
+Merger.py" consolidates files from numbered subfolders in catcamoutput into a merged folder for organized management.
+
+Purger.py: 
+removes .h264 files from merged folder and clears all files in catcamoutput for decluttering.
+
+Please note that this release focuses on basic motion detection, photo and video capture, video conversion, email login, and email notification functionality. Future versions may introduce enhancements, optimizations, and additional features.
 
 ## Contributions
 
