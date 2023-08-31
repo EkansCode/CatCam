@@ -34,13 +34,13 @@ Please note that the specific steps to generate an app password may change over 
 
 Once you have 2FA enabled, you can generate an app password:
 
-a. While still on the "Security" page, find the "Signing in to Google" section.
-b. Look for the "App passwords" option. If you don't see it, you might need to scroll down.
-c. Click on "App passwords." You might be prompted to enter your Google account password again.
-d. Select the app you want to generate an app password for. Choose "Mail" if the specific app is not listed.
-e. Choose the device type that corresponds to your situation (e.g., "Other (Custom name)").
-f. Click "Generate."
-g. Google will generate a unique 16-character app password for you. This is what is used when asked to input email password by ui, or when set in CatCam.py to fast login (check ##Configuration).
+While still on the "Security" page, find the "Signing in to Google" section.
+Look for the "App passwords" option. If you don't see it, you might need to scroll down.
+Click on "App passwords." You might be prompted to enter your Google account password again.
+Select the app you want to generate an app password for. Choose "Mail" if the specific app is not listed.
+Choose the device type that corresponds to your situation (e.g., "Other (Custom name)").
+Click "Generate."
+Google will generate a unique 16-character app password for you. This is what is used when asked to input email password by ui, or when set in CatCam.py to fast login (check ##Configuration).
 
 ## Installation
 
