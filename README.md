@@ -28,7 +28,7 @@ Features:
 - Python 3.x
 - ffmpeg 
 
-#enable 2-Step Verification - Get app password/email password
+Enable 2-Step Verification - Get app password/email password
 
 Please note that the specific steps to generate an app password may change over time, so it's a good idea to refer to Gmail's official documentation for the most up-to-date instructions.
 
@@ -50,7 +50,7 @@ Google will generate a unique 16-character app password for you. This is what is
 pip install picamera2 
 pip install gpiozero
 
-3. Install ffmpeg and put it in your CatCam folder. Depending on your pi's processor you will need the 32 (armhf) or 64 (arm64) bit ffmpeg both can be downloaded from https://johnvansickle.com/ffmpeg/ if you are confused which bit your processor is use cat /proc/cpuinfo in terminal. If link is invaild search for FFmpeg Static Builds for linux.
+3. For video capture install ffmpeg and put it in your CatCam folder, this is needed to convert the video file so it is playable. Depending on your pi's processor you will need the 32 (armhf) or 64 (arm64) bit ffmpeg both can be downloaded from https://johnvansickle.com/ffmpeg/ if you are confused which bit your processor is use cat /proc/cpuinfo in terminal. If link is invaild search for FFmpeg Static Builds for linux.
    
 
 #Hardware
@@ -75,11 +75,12 @@ Make Circuit as shown in photo
 ## Usage
 
     Ensure you have the required Python libraries and dependencies installed.
-    Ensure ffmpeg is downloaded for the right cpu architecture and that it is in CatCam folder.
+    For video capture ensure ffmpeg is downloaded for the right cpu architecture and that it is in CatCam folder.
     Set up the PIR motion sensor and LED on the appropriate GPIO pins.
     Run the script using python catcam.py in the terminal.
     Follow the prompts to configure email settings and output preferences.
     The script will continuously monitor for motion and capture media as configured.
+    I prefer to run it by from ssh or teminal using tmux https://github.com/tmux/tmux/wiki
 
 Merger.py:
 Merger.py" consolidates files from numbered subfolders in catcamoutput into a merged folder for organized management.
